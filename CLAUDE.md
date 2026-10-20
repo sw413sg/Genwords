@@ -10,10 +10,14 @@ Web en HTML/JS (`index.html`) que muestra N palabras al azar en español (defaul
 2. **Cuando esté lista, pasarla 1 a 1 a SwiftUI** (iOS 17+), sin rediseñar. Por eso, en la web: separá la lógica (rimas, diccionario, sesiones) de la interfaz en módulos JS puros con tests, y usá componentes que tengan equivalente directo en SwiftUI.
 
 ## Qué sumar, en este orden
-1. Rima real en español: consonante (igual desde la última vocal tónica) y asonante (solo vocales desde la tónica). Tené en cuenta acentos, diptongos/hiatos y palabras agudas, graves y esdrújulas. Con tests de casos difíciles.
-2. Bloc para escribir la letra al lado de las palabras (que no sea solo un generador, para evitar rechazo de Apple por la regla 4.2).
+1. Rima real en español: consonante (igual desde la última vocal tónica) y asonante (solo vocales desde la tónica). Tené en cuenta acentos, diptongos/hiatos y palabras agudas, graves y esdrújulas. Con tests de casos difíciles. Mostrá primero las rimas más usadas (usá `diccionario/frecuencias-es.txt`).
+2. Bloc para escribir la letra al lado de las palabras (que no sea solo un generador, para evitar rechazo de Apple por la regla 4.2), con:
+   - sugerencias de rimas mientras se escribe,
+   - las palabras que riman pintadas del mismo color,
+   - el conteo de sílabas de cada verso (métricas: sinalefa incluida).
 3. Favoritos y sesiones guardadas (por ahora en localStorage).
-4. Modo freestyle: palabras con timer tipo batalla.
+4. Modo freestyle: palabras con timer tipo batalla, beats con control de tempo (BPM) y la sílaba que cae en el tiempo fuerte del compás marcada. Los beats tienen que ser propios o con licencia que permita usarlos en una app comercial; anotá la licencia de cada uno en el repo.
+5. Todo tiene que funcionar sin internet (en la web, con service worker y el diccionario local; nada de APIs externas).
 
 Monetización a definir (probable: gratis + pago único, como Unforgettables). No la armes hasta que Proshe la defina.
 
